@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="View\AddNewNotebookWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\EditNotebookWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\GiveFeedbackWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\LoginUserWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\MessageView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\MyView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\RegisterUserWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\ReviewsWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\SupportWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\UserWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Language\lang.en-US.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Language\lang.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\AddNewNotebookWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\EditNotebookWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\GiveFeedbackWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\LoginUserWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\MessageView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\MyView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\RegisterUserWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\ReviewsWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\SupportWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\UserWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

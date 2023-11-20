@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:v="clr-namespace:System;assembly=mscorlib">
+    <v:String x:Key="Exit">Exit</v:String>
+    <v:String x:Key="ResetFilters">Reset Filters</v:String>
+    <v:String x:Key="SearchNotebook">Find</v:String>
+    <v:String x:Key="Reviews">Reviews</v:String>
+    <v:String x:Key="Account">Account</v:String>
+    <v:String x:Key="SortByPrice">Sort</v:String>
+    <v:String x:Key="User">User</v:String>
+    <v:String x:Key="RegistrationDate">Registration date</v:String>
+    <v:String x:Key="Support">Support</v:String>
+</ResourceDictionary>

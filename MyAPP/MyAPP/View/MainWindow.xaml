@@ -1,0 +1,117 @@
+﻿<Window x:Class="MyAPP.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyAPP.View" xmlns:viewmodel="clr-namespace:MyAPP.ViewModel"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" AllowsTransparency="True" WindowStyle="None"
+        Name="MainWnd">
+    <Window.Resources>
+        
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <TabControl Grid.Row="0" SelectedItem="{Binding SelectedTabItem}">
+            <TabItem Name="UsersTab">
+                <TabItem.Header>
+                    <TextBlock Text="Users"/>
+                </TabItem.Header>
+                <ListView x:Name="ViewAllUsers" ItemsSource="{Binding AllUsers}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="ID"
+                                            DisplayMemberBinding="{Binding Path=Id}"/>
+                            <GridViewColumn Header="LOGIN"
+                                            DisplayMemberBinding="{Binding Path=Login}"/>
+                            <GridViewColumn Header="PASSWORD"
+                                            DisplayMemberBinding="{Binding Path=Password}"/>
+                            <GridViewColumn Header="CREATED"
+                                            DisplayMemberBinding="{Binding Path=Created}"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </TabItem>
+            <TabItem Name="NotebooksTab">
+                <TabItem.Header>
+                    <TextBlock Text="Notebooks"/>
+                </TabItem.Header>
+                <TabItem.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Редактирование" Command="{Binding OpenEditItemWnd}"/>
+                        <MenuItem Header="Удалить" Command="{Binding DeleteItem}"/>
+                    </ContextMenu>
+                </TabItem.ContextMenu>
+                <ListView x:Name="ViewAllNotebooks" ItemsSource="{Binding AllNotebooks}"
+                          SelectedItem="{Binding SelectedNotebook}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="ID"
+                                            DisplayMemberBinding="{Binding Path=Id}"/>
+                            <GridViewColumn Header="NAME"
+                                            DisplayMemberBinding="{Binding Path=Name}"/>
+                            <GridViewColumn Header="TYPE"
+                                            DisplayMemberBinding="{Binding Path=Type}"/>
+                            <GridViewColumn Header="PRICE"
+                                            DisplayMemberBinding="{Binding Path=Price}"/>
+                            <GridViewColumn Header="IMAGEID"
+                                            DisplayMemberBinding="{Binding Path=NoteImage.Id}"/>
+                            <GridViewColumn Header="IMAGE">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Image Source="{Binding Path=NoteImage.Data}" Width="60" Height="60" />
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </TabItem>
+            <TabItem Name="OrdersTab">
+                <TabItem.Header>
+                    <TextBlock Text="Orders"/>
+                </TabItem.Header>
+                <ListView x:Name="ViewAllOrders" ItemsSource="{Binding AllOrders}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="ID" 
+                                            DisplayMemberBinding="{Binding Path=Id}"/>
+                            <GridViewColumn Header="NOTEBOOK ID"
+                                            DisplayMemberBinding="{Binding Path=NotebookId}"/>
+                            <GridViewColumn Header="USER ID"
+                                            DisplayMemberBinding="{Binding Path=UserId}"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </TabItem>
+            <TabItem Name="SupportsTab">
+                <TabItem.Header>
+                    <TextBlock Text="Support List"/>
+                </TabItem.Header>
+                <ListView x:Name="ViewAllSupports" ItemsSource="{Binding AllSupports}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="ID"
+                                            DisplayMemberBinding="{Binding Path=Id}"/>
+                            <GridViewColumn Header="MAIL"
+                                            DisplayMemberBinding="{Binding Path=Mail}"/>
+                            <GridViewColumn Header="CONTEXT"
+                                            DisplayMemberBinding="{Binding Path=Content}"/>
+                            <GridViewColumn Header="CREATED"
+                                            DisplayMemberBinding="{Binding Path=Created}"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </TabItem>
+        </TabControl>
+        <StackPanel Grid.Row="1" Orientation="Horizontal"
+                    HorizontalAlignment="Right">
+            <Button Content="Новый ноутбук" Command ="{Binding OpenAddNewNotebookWnd}"/>
+            <Button Name="Exit" Content="Выход" Command ="{Binding ExitMainWnd}"
+                     CommandParameter="{Binding ElementName=MainWnd}"/>
+        </StackPanel>
+    </Grid>
+</Window>
